@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Caio Ceccon"]
   spec.email         = ["contact@caioceccon.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A ruby command line tool to make interface to nmap.}
+  spec.description   = %q{This library let you run nmap multiple times and compare the output.}
+  spec.homepage      = "http://github.com/caioceccon/rnmap"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -23,8 +23,16 @@ Gem::Specification.new do |spec|
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = [
+    "lib/rnmap.rb",
+    "lib/rnmap/version.rb",
+    "lib/rnmap/address.rb",
+    "lib/rnmap/parser.rb",
+    "lib/rnmap/task.rb",
+    "lib/rnmap/output_formatter.rb"
+  ]
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["rnmap"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.10"
