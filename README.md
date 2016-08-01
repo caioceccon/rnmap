@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    rnmap --address 192.168.1.254
 
 ## Development
 
